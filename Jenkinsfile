@@ -17,11 +17,14 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent { docker 'openjdk:8-jre' } 
+            agent { docker 'terraform:light' } 
             stages{
                 stage('Dev'){
                     steps {
                         sh "ls"
+                        dir("Terraform"){
+                            sh "terraform init"
+                        }
                     }
                 }
                 stage('QA'){
