@@ -17,7 +17,12 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent { docker 'hashicorp/terraform' } 
+            agent {
+                    docker {
+                        image 'hashicorp/terraform:0.11.11'
+                        args '--entrypoint=""'
+                    }
+                }
             stages{
                 stage('Dev'){
                     steps {
