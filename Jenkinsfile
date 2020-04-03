@@ -16,14 +16,12 @@ pipeline {
                 echo 'If needed - Artifact Upload'
             }
         }
-
-
         stage('Deploy') {
             agent { docker 'openjdk:8-jre' } 
             stages{
                 stage('Dev'){
                     steps {
-                        echo 'To dev'
+                        echo ''
                     }
                 }
                 stage('QA'){
