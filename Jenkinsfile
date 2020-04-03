@@ -17,7 +17,7 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent { docker 'terraform:light' } 
+            agent { docker 'hashicorp/terraform' } 
             stages{
                 stage('Dev'){
                     steps {
