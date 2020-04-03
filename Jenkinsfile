@@ -22,7 +22,7 @@ pipeline {
                 stage('Dev'){
                     steps {
                         sh "ls"
-                        dir("Terraform"){
+                        dir("Terraform/lambda/getProducts"){
                             sh "terraform init"
                         }
                     }
