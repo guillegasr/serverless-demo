@@ -17,11 +17,10 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent { docker 'openjdk:8-jre' } 
             stages{
                 stage('Dev'){
                     steps {
-                        echo ''
+                        sh "ls"
                     }
                 }
                 stage('QA'){
